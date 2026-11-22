@@ -1,0 +1,13 @@
+services:
+  acceptance:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      target: build
+    environment:
+      ACCEPTANCE_DATABASE_URL: postgres://oceanai:oceanai_local_demo@db:5432/oceanai?sslmode=disable
+      GIN_MODE: release
+    command: ["go", "test", "-v", "-count=1", "-timeout=180s", "./..."]
+    depends_on:
+      db:
+        condition: service_healthy

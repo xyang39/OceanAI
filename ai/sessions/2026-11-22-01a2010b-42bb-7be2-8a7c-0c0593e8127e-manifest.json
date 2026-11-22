@@ -1,0 +1,280 @@
+{
+  "session_id": "01a2010b-42bb-7be2-8a7c-0c0593e8127e",
+  "title": "Review interview assessment requirements",
+  "tool": "Codex Desktop",
+  "cli_version": "0.171.0-alpha.13",
+  "models": [
+    "gpt-6-astra"
+  ],
+  "timezone": "UTC",
+  "started_at": "2026-11-22T02:17:25.249Z",
+  "snapshot_ended_at": "2026-11-22T03:22:44.764Z",
+  "exported_at": "2026-11-22T03:22:44.882150+00:00",
+  "session_still_active": true,
+  "source_filename": "rollout-2026-11-22T10-17-24-01a2010b-42bb-7be2-8a7c-0c0593e8127e.jsonl",
+  "source_records": 875,
+  "source_prefix_sha256": "e5fd59448422db3eede41808e156981e9bd8c1190f83911603d2a3f6d237a226",
+  "interaction_records": 259,
+  "tool_activity_records": 127,
+  "message_counts": {
+    "user": 10,
+    "assistant": 36
+  },
+  "tools_recorded": [
+    "agent.codex_apps_open_page",
+    "agent.codex_apps_selected_page_part_1_of_1",
+    "codex_app.list_threads",
+    "codex_app.load_workspace_dependencies",
+    "codex_app.read_thread",
+    "codex_app.update_running_summary",
+    "cua_repl.js",
+    "exec",
+    "mcp__cua_repl.js",
+    "request_user_input",
+    "wait"
+  ],
+  "excluded_record_categories": {
+    "session_meta": 1,
+    "event_msg": 136,
+    "response_item/additional_tools": 1,
+    "response_item/message": 11,
+    "world_state": 6,
+    "turn_context": 8,
+    "event/UserMessage": 9,
+    "event/AgentMessage": 35,
+    "token_usage_record": 113,
+    "event/Reasoning": 83,
+    "response_item/reasoning": 83,
+    "retained_context": 1,
+    "compacted": 1,
+    "event/ContextCompaction": 1
+  },
+  "redactions": [
+    {
+      "source_line": 62,
+      "reason": "binary image omitted; see saved screenshots and image paths"
+    },
+    {
+      "source_line": 62,
+      "reason": "binary image omitted; see saved screenshots and image paths"
+    },
+    {
+      "source_line": 62,
+      "reason": "binary image omitted; see saved screenshots and image paths"
+    },
+    {
+      "source_line": 62,
+      "reason": "binary image omitted; see saved screenshots and image paths"
+    },
+    {
+      "source_line": 62,
+      "reason": "binary image omitted; see saved screenshots and image paths"
+    },
+    {
+      "source_line": 62,
+      "reason": "binary image omitted; see saved screenshots and image paths"
+    },
+    {
+      "source_line": 133,
+      "reason": "local demo database password",
+      "occurrences": 2
+    },
+    {
+      "source_line": 135,
+      "reason": "local demo database password",
+      "occurrences": 2
+    },
+    {
+      "source_line": 341,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 348,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 353,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 368,
+      "reason": "binary image omitted; see saved screenshots and image paths"
+    },
+    {
+      "source_line": 378,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 481,
+      "reason": "local demo database password",
+      "occurrences": 2
+    },
+    {
+      "source_line": 482,
+      "reason": "local demo database password",
+      "occurrences": 2
+    },
+    {
+      "source_line": 564,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 565,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 607,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 624,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 641,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 646,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 651,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 658,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 666,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 682,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 687,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 695,
+      "reason": "binary image omitted; see saved screenshots and image paths"
+    },
+    {
+      "source_line": 722,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 734,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 792,
+      "reason": "history retrieval metadata; target session public originals exported independently"
+    },
+    {
+      "source_line": 793,
+      "reason": "unrelated private chat inventory; target session exported independently"
+    },
+    {
+      "source_line": 800,
+      "reason": "history retrieval metadata; target session public originals exported independently"
+    },
+    {
+      "source_line": 806,
+      "reason": "history retrieval metadata; target session public originals exported independently"
+    },
+    {
+      "source_line": 808,
+      "reason": "duplicate history retrieval containing internal metadata; public originals exported independently"
+    },
+    {
+      "source_line": 829,
+      "reason": "local demo database password",
+      "occurrences": 2
+    },
+    {
+      "source_line": 831,
+      "reason": "local demo database password",
+      "occurrences": 2
+    },
+    {
+      "source_line": 835,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 837,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 837,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 842,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 844,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 844,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 858,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 860,
+      "reason": "local demo database password",
+      "occurrences": 1
+    },
+    {
+      "source_line": 860,
+      "reason": "local demo database password",
+      "occurrences": 1
+    }
+  ],
+  "files": {
+    "2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e.jsonl": {
+      "bytes": 935417,
+      "sha256": "2c4bd65fb836afc1adeb6ec3d568788dd4938a3a7aab45b72c61eb9b80f20982"
+    },
+    "2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e-tool-activity.jsonl": {
+      "bytes": 1344317,
+      "sha256": "4a2bea67aa6cbda1a036ab49fc2370a34e7de41739142fc9a565da03bb1c356c"
+    },
+    "2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e.md": {
+      "bytes": 48515,
+      "sha256": "be4f5b195b463a1b428200600b950926f9b435aa37949061ebc7db18e69add95"
+    }
+  }
+}

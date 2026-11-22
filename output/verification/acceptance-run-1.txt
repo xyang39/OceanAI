@@ -1,0 +1,116 @@
+ Container oceanai-db-1  Running
+ Container oceanai-backend-1  Running
+ Container oceanai-frontend-1  Running
+ Container oceanai-db-1  Waiting
+ Container oceanai-db-1  Healthy
+ Container oceanai-backend-1  Waiting
+ Container oceanai-backend-1  Healthy
+PASS compiled React page and JavaScript are served
+PASS Nginx → Gin → PostgreSQL readiness
+PASS both seeded demo actors are discoverable
+     alice@east.test → EAST-DEMO-0001 → 2026-01-11 00:30
+PASS east: persisted certificate, actor scope, and local date
+     bob@west.test → WEST-DEMO-0001 → 2026-01-10 21:30
+PASS west: persisted certificate, actor scope, and local date
+PASS cross-tenant detail is indistinguishable from a missing certificate
+PASS missing and unknown actors are rejected
+
+7 public-service smoke checks passed. Run sh scripts/verify.sh for isolated A1–A7 checks.
+ Network oceanai-verify-3757_default  Creating
+ Network oceanai-verify-3757_default  Created
+ Volume "oceanai-verify-3757_postgres_data"  Creating
+ Volume "oceanai-verify-3757_postgres_data"  Created
+ Container oceanai-verify-3757-db-1  Creating
+ Container oceanai-verify-3757-db-1  Created
+ Container oceanai-verify-3757-db-1  Starting
+ Container oceanai-verify-3757-db-1  Started
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "orbstack" instance using docker driver
+
+#1 [acceptance internal] load build definition from Dockerfile
+#1 transferring dockerfile: 474B done
+#1 DONE 0.0s
+
+#2 [acceptance internal] load metadata for docker.io/library/golang:1.26-alpine
+#2 DONE 0.0s
+
+#3 [acceptance internal] load .dockerignore
+#3 transferring context: 99B done
+#3 DONE 0.0s
+
+#4 [acceptance build 1/6] FROM docker.io/library/golang:1.26-alpine
+#4 DONE 0.0s
+
+#5 [acceptance internal] load build context
+#5 transferring context: 62.06kB done
+#5 DONE 0.0s
+
+#6 [acceptance build 4/6] RUN go mod download
+#6 CACHED
+
+#7 [acceptance build 3/6] COPY backend/go.mod backend/go.sum ./
+#7 CACHED
+
+#8 [acceptance build 5/6] COPY backend/ ./
+#8 CACHED
+
+#9 [acceptance build 2/6] WORKDIR /src
+#9 CACHED
+
+#10 [acceptance build 6/6] RUN CGO_ENABLED=0 go test ./... && CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /out/server ./cmd/server
+#10 CACHED
+
+#11 [acceptance] exporting to image
+#11 exporting layers
+#11 exporting layers 2.3s done
+#11 writing image sha256:84a1cf72c0a03c68603109274aa4cfd26683cb4fd72ca0b3265e299af359a9b7 done
+#11 naming to docker.io/library/oceanai-verify-3757-acceptance done
+#11 DONE 2.3s
+
+#12 [acceptance] resolving provenance for metadata file
+#12 DONE 0.0s
+?   	oceanai/backend/cmd/server	[no test files]
+=== RUN   TestAcceptance
+=== RUN   TestAcceptance/A1_tenant_isolation
+=== RUN   TestAcceptance/A2_A4_same_key_concurrency_and_outcomes
+=== RUN   TestAcceptance/A3_key_misuse_preserves_result
+=== RUN   TestAcceptance/A2_different_keys_compete
+=== RUN   TestAcceptance/learner_failure_rolls_back_certificate_and_audit
+=== RUN   TestAcceptance/A5_dates_and_list_contract
+=== RUN   TestAcceptance/A7_revocation_is_repeat_safe
+=== RUN   TestAcceptance/A6_100000_row_exports
+    acceptance_test.go:418: list did not complete while export was running
+--- FAIL: TestAcceptance (11.29s)
+    --- PASS: TestAcceptance/A1_tenant_isolation (0.00s)
+    --- PASS: TestAcceptance/A2_A4_same_key_concurrency_and_outcomes (0.01s)
+    --- PASS: TestAcceptance/A3_key_misuse_preserves_result (0.00s)
+    --- PASS: TestAcceptance/A2_different_keys_compete (0.01s)
+    --- PASS: TestAcceptance/learner_failure_rolls_back_certificate_and_audit (0.01s)
+    --- PASS: TestAcceptance/A5_dates_and_list_contract (0.01s)
+    --- PASS: TestAcceptance/A7_revocation_is_repeat_safe (0.02s)
+    --- FAIL: TestAcceptance/A6_100000_row_exports (11.18s)
+=== RUN   TestTenantLocalDates
+=== RUN   TestTenantLocalDates/Sydney_summer
+=== RUN   TestTenantLocalDates/Perth_summer
+=== RUN   TestTenantLocalDates/Sydney_winter
+--- PASS: TestTenantLocalDates (0.00s)
+    --- PASS: TestTenantLocalDates/Sydney_summer (0.00s)
+    --- PASS: TestTenantLocalDates/Perth_summer (0.00s)
+    --- PASS: TestTenantLocalDates/Sydney_winter (0.00s)
+FAIL
+FAIL	oceanai/backend/internal/api	11.296s
+=== RUN   TestMigrationPreservesV1Data
+--- PASS: TestMigrationPreservesV1Data (0.05s)
+PASS
+ok  	oceanai/backend/internal/store	0.055s
+FAIL
+
+ Container oceanai-verify-3757-db-1  Stopping
+ Container oceanai-verify-3757-db-1  Stopped
+ Container oceanai-verify-3757-db-1  Removing
+ Container oceanai-verify-3757-db-1  Removed
+ Volume oceanai-verify-3757_postgres_data  Removing
+ Network oceanai-verify-3757_default  Removing
+ Volume oceanai-verify-3757_postgres_data  Removed
+ Network oceanai-verify-3757_default  Removed

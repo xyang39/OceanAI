@@ -1,0 +1,2 @@
+session_id,tool,model,started_at,ended_at,export_file,purpose,related_commits
+01a2010b-42bb-7be2-8a7c-0c0593e8127e,Codex Desktop,gpt-6-astra,2026-11-22T02:17:25.249Z,2026-11-22T03:22:44.764Z,sessions/2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e.jsonl,Assessment reading; framework; design; A1-A7 implementation; verification; README review; evidence packaging snapshot,UNAVAILABLE: workspace has no Git history at export
