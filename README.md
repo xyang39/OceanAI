@@ -2,7 +2,7 @@
 
 A multi-tenant certificate admin console built with **Go/Gin, React/TypeScript, and PostgreSQL 18**, started with Docker Compose.
 
-The six planned APIs and their UI workflows are implemented. The A1–A7 acceptance suite passes against isolated PostgreSQL data. **The assessment submission is not yet complete:** Git was initialized during submission packaging, after implementation; earlier incremental commit history is unavailable. GitHub publication is pending. The [AI evidence snapshot](ai/completeness-declaration.md) is now included, with its limitations and missing commit links documented. See [submission gaps](#submission-gaps-and-known-limits).
+The six planned APIs and their UI workflows are implemented. The A1–A7 acceptance suite passes against isolated PostgreSQL data. **The assessment submission is not yet complete:** Git was initialized during submission packaging, after implementation; earlier incremental commit history is unavailable. The public GitHub remote is [https://github.com/xyang39/OceanAI](https://github.com/xyang39/OceanAI). The [AI evidence snapshot](ai/completeness-declaration.md) is now included, with its limitations and initial implementation commit links documented. See [submission gaps](#submission-gaps-and-known-limits).
 
 Reviewed against the supplied **Ocean AI Labs Beijing – Technical Interview Assessment, version 20261102**, and the implementation plan agreed in this chat. Section 6 answers are intentionally excluded.
 
@@ -221,10 +221,10 @@ Browser → Nginx (:8080) → Gin API → PostgreSQL
 
 ## Submission gaps and known limits
 
-**Submission blockers found during review:**
+**Submission status and remaining evidence limits:**
 
-- Git was initialized during submission packaging after implementation. The initial commit records the existing work honestly; it does not reconstruct earlier incremental history. GitHub publication is pending.
-- The [AI evidence snapshot](ai/completeness-declaration.md) now includes [session exports](ai/sessions/), a [session index](ai/session-index.csv), a [decision log](ai/decision-log.md), and original tool action evidence. It is a redacted extraction of the recorded session, including unsuccessful runs, not an untouched internal rollout. Review the declared truncation/redaction limits and refresh after the session ends; commit links and a candidate declaration about any additional AI use remain outstanding.
+- Git was initialized during submission packaging after implementation. The initial commit records the existing work honestly; it does not reconstruct earlier incremental history. The public GitHub remote is [https://github.com/xyang39/OceanAI](https://github.com/xyang39/OceanAI).
+- The [AI evidence snapshot](ai/completeness-declaration.md) now includes [session exports](ai/sessions/), a [session index](ai/session-index.csv), a [decision log](ai/decision-log.md), and original tool action evidence. It is a redacted extraction of the recorded session, including unsuccessful runs, not an untouched internal rollout. Review the declared truncation/redaction limits and refresh after the session ends; initial implementation commit links are recorded; a candidate declaration about any additional AI use remains outstanding.
 - Any repository AI instruction files must be retained in the eventual Git submission. No repository-local `AGENTS.md` was present during review.
 - The candidate reported completing section 6 on 2026-11-22. Their [written answer](written-answer.md) is included unchanged; the assistant has not authored or reviewed its answers. The supplied filename is `written-answer.md`.
 - The assessment specifies a one-hour sitting. Its official start time was not established in this chat, so time-limit compliance is not verified.
@@ -261,3 +261,7 @@ compose.yaml             Application and smoke-check service
 compose.verify.yaml      Isolated PostgreSQL acceptance runner
 output/verification/     Original verification command output
 ```
+
+## Submission revision
+
+Public repository: [https://github.com/xyang39/OceanAI](https://github.com/xyang39/OceanAI). The initial implementation snapshot is [4a5222c](https://github.com/xyang39/OceanAI/commit/4a5222ca1ff731f2eb89bdb8e611946ed57b88e7); a subsequent packaging commit links the evidence to that snapshot. Earlier incremental development history is unavailable. Use `git rev-parse HEAD` for the final checked-out submission SHA and `git log --oneline` for the actual commit history.

@@ -6,45 +6,51 @@
   "models": [
     "gpt-6-astra"
   ],
+  "related_commit_at_snapshot": "4a5222ca1ff731f2eb89bdb8e611946ed57b88e7",
   "timezone": "UTC",
   "started_at": "2026-11-22T02:17:25.249Z",
-  "snapshot_ended_at": "2026-11-22T03:22:44.764Z",
-  "exported_at": "2026-11-22T03:22:44.882150+00:00",
+  "snapshot_ended_at": "2026-11-22T03:28:59.688Z",
+  "exported_at": "2026-11-22T03:28:59.852675+00:00",
   "session_still_active": true,
   "source_filename": "rollout-2026-11-22T10-17-24-01a2010b-42bb-7be2-8a7c-0c0593e8127e.jsonl",
-  "source_records": 875,
-  "source_prefix_sha256": "e5fd59448422db3eede41808e156981e9bd8c1190f83911603d2a3f6d237a226",
-  "interaction_records": 259,
-  "tool_activity_records": 127,
+  "source_records": 1003,
+  "source_prefix_sha256": "bcb051b33d56620809a90db1d27f3bd36beb5259d268b8a4b1e0c85401443349",
+  "interaction_records": 299,
+  "tool_activity_records": 145,
   "message_counts": {
-    "user": 10,
-    "assistant": 36
+    "user": 12,
+    "assistant": 41
   },
   "tools_recorded": [
+    "agent.browser_tabs",
     "agent.codex_apps_open_page",
     "agent.codex_apps_selected_page_part_1_of_1",
     "codex_app.list_threads",
     "codex_app.load_workspace_dependencies",
     "codex_app.read_thread",
     "codex_app.update_running_summary",
+    "codex_apps.github.get_profile",
+    "codex_apps.github.get_repo",
+    "codex_apps.github.list_repositories",
     "cua_repl.js",
     "exec",
     "mcp__cua_repl.js",
     "request_user_input",
+    "request_user_input_async",
     "wait"
   ],
   "excluded_record_categories": {
     "session_meta": 1,
-    "event_msg": 136,
+    "event_msg": 157,
     "response_item/additional_tools": 1,
     "response_item/message": 11,
     "world_state": 6,
-    "turn_context": 8,
-    "event/UserMessage": 9,
-    "event/AgentMessage": 35,
-    "token_usage_record": 113,
-    "event/Reasoning": 83,
-    "response_item/reasoning": 83,
+    "turn_context": 9,
+    "event/UserMessage": 11,
+    "event/AgentMessage": 41,
+    "token_usage_record": 131,
+    "event/Reasoning": 94,
+    "response_item/reasoning": 94,
     "retained_context": 1,
     "compacted": 1,
     "event/ContextCompaction": 1
@@ -261,20 +267,30 @@
       "source_line": 860,
       "reason": "local demo database password",
       "occurrences": 1
+    },
+    {
+      "source_line": 974,
+      "reason": "inline binary image",
+      "occurrences": 1
+    },
+    {
+      "source_line": 979,
+      "reason": "inline binary image",
+      "occurrences": 1
     }
   ],
   "files": {
     "2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e.jsonl": {
-      "bytes": 935417,
-      "sha256": "2c4bd65fb836afc1adeb6ec3d568788dd4938a3a7aab45b72c61eb9b80f20982"
+      "bytes": 1061165,
+      "sha256": "22c5b852d1815c0ad9069f19c48b888b5d953b8adeb01f941fe4e162b50c2697"
     },
     "2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e-tool-activity.jsonl": {
-      "bytes": 1344317,
-      "sha256": "4a2bea67aa6cbda1a036ab49fc2370a34e7de41739142fc9a565da03bb1c356c"
+      "bytes": 1513733,
+      "sha256": "4305e5887a86745cba4d542a443333c0514fa14f97d6fec848b35bdae5fb9355"
     },
     "2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e.md": {
-      "bytes": 48515,
-      "sha256": "be4f5b195b463a1b428200600b950926f9b435aa37949061ebc7db18e69add95"
+      "bytes": 51106,
+      "sha256": "4b417d1af928b30015815bd26916d8736218dbc152356425809f049e11600851"
     }
   }
 }

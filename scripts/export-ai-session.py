@@ -7,6 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import subprocess
 from datetime import datetime, timezone
 
 parser = argparse.ArgumentParser(description=__doc__)
@@ -33,6 +34,8 @@ if sid != '01a2010b-42bb-7be2-8a7c-0c0593e8127e':
 base = f'2026-11-22-{sid}'
 redactions = []
 models = sorted({r['payload']['model'] for _, r in records if r['type'] == 'turn_context' and r['payload'].get('model')})
+git_head = subprocess.run(['git', 'rev-parse', '--verify', 'HEAD'], cwd=root, capture_output=True, text=True)
+related_commit = git_head.stdout.strip() if git_head.returncode == 0 else 'UNAVAILABLE: no Git commit at snapshot'
 # This retrieval contains unrelated chat titles; the other retrieves duplicate conversation
 # history with internal runtime metadata. Original public records are exported independently.
 private_retrieval_calls = {
@@ -129,6 +132,7 @@ last_n, last = records[-1]
 manifest = {
     'session_id': sid, 'title': 'Review interview assessment requirements',
     'tool': 'Codex Desktop', 'cli_version': meta.get('cli_version'), 'models': models,
+    'related_commit_at_snapshot': related_commit,
     'timezone': 'UTC', 'started_at': records[0][1]['timestamp'], 'snapshot_ended_at': last['timestamp'],
     'exported_at': datetime.now(timezone.utc).isoformat(), 'session_still_active': True,
     'source_filename': args.source.name, 'source_records': last_n,
@@ -147,5 +151,5 @@ with (root / 'ai/session-index.csv').open('w', newline='') as f:
     writer.writerow([sid, 'Codex Desktop', ';'.join(models), manifest['started_at'], manifest['snapshot_ended_at'],
                      'sessions/' + session_file.name,
                      'Assessment reading; framework; design; A1-A7 implementation; verification; README review; evidence packaging snapshot',
-                     'UNAVAILABLE: workspace has no Git history at export'])
+                     related_commit])
 print(json.dumps({k: manifest[k] for k in ('session_id', 'snapshot_ended_at', 'source_records', 'interaction_records', 'tool_activity_records', 'message_counts')}, indent=2))

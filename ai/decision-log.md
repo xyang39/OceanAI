@@ -4,7 +4,7 @@ Prepared retrospectively on 2026-11-22 from the recorded session, not presented 
 
 Session: `01a2010b-42bb-7be2-8a7c-0c0593e8127e` — **Review interview assessment requirements**. Tool: Codex Desktop; recorded model: `gpt-6-astra`. All source timestamps in the exports use UTC; the working timezone was Asia/Shanghai (UTC+08:00).
 
-**Commit links are unavailable for every entry:** this workspace had no Git repository/history at export. File and test links identify the current artifacts, not historical commits. No commits or decision dates have been fabricated.
+**Commit linkage added during packaging:** all implementation decisions below are represented by the initial snapshot [4a5222c](https://github.com/xyang39/OceanAI/commit/4a5222ca1ff731f2eb89bdb8e611946ed57b88e7). Git was initialized only after implementation, at the user's request. This is a snapshot linkage, not a claim that a separate commit was made when each decision occurred. Earlier incremental history is unavailable; no history or decision dates have been fabricated.
 
 ## D1 — Accepted suggestion: durable operation results for retry-safe issuance
 
@@ -14,7 +14,7 @@ The user proposed six APIs and six business tables. The assistant recommended re
 - Accepted implementation instruction: [session L505](sessions/2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e.md#source-L505).
 - Implementation: [migration v2](../backend/internal/store/migration_v2.sql), [issuance handler](../backend/internal/api/mutations.go).
 - Verification: [passing acceptance run](../output/verification/acceptance-run-2.txt), particularly `A2_A4_same_key_concurrency_and_outcomes`, `A2_different_keys_compete`, and `A3_key_misuse_preserves_result`. These check original outcomes, certificate/audit counts, and conflict behavior.
-- Commit: **unavailable — no Git history**.
+- Commit: [4a5222c](https://github.com/xyang39/OceanAI/commit/4a5222ca1ff731f2eb89bdb8e611946ed57b88e7) (initial implementation snapshot).
 
 ## D2 — Corrected AI output: A6 test did not reliably overlap requests
 
@@ -25,7 +25,7 @@ The AI-authored first acceptance test failed with `list did not complete while e
 - Current test: [acceptance_test.go](../backend/internal/api/acceptance_test.go), `pacedReader` and `A6_100000_row_exports`.
 - Verification: [second acceptance run](../output/verification/acceptance-run-2.txt); 100,000 exact rows, identical CSVs, approximately 2.579 s paced / 0.372 s unpaced, and a list response in approximately 0.633 s before the first download finished. [Recorded result](sessions/2026-11-22-01a2010b-42bb-7be2-8a7c-0c0593e8127e.md#source-L679).
 - Limit: these timings exercise Gin and PostgreSQL directly, not a full-size Nginx/browser download.
-- Commit: **unavailable — no Git history**.
+- Commit: [4a5222c](https://github.com/xyang39/OceanAI/commit/4a5222ca1ff731f2eb89bdb8e611946ed57b88e7) (initial implementation snapshot).
 
 ## D3 — Scope/design tradeoff: synchronous issuance and streamed export
 
@@ -36,7 +36,7 @@ The user explicitly requested the smallest design focused on A1–A7 and asked t
 - Implementation: [mutations](../backend/internal/api/mutations.go), [list/export](../backend/internal/api/list.go), [React workflows](../frontend/src/main.tsx).
 - Verification: [acceptance run](../output/verification/acceptance-run-2.txt), [browser evidence](../output/demo/completed-workflow.jpg).
 - Tradeoff: issuance has a 30-second context and retains per-learner results in memory. The 100,000-row benchmark covers export, not issuance at that scale. The actor header is a demo mechanism, not production authentication.
-- Commit: **unavailable — no Git history**.
+- Commit: [4a5222c](https://github.com/xyang39/OceanAI/commit/4a5222ca1ff731f2eb89bdb8e611946ed57b88e7) (initial implementation snapshot).
 
 ## D4 — Accepted query design: shared filtering and local-date ordering
 
@@ -47,4 +47,4 @@ The list design uses literal substring matching, allowlisted sorts, a certificat
 - Implementation: [list.go](../backend/internal/api/list.go).
 - Verification: `A5_dates_and_list_contract`, `A6_100000_row_exports`, and the Sydney winter test in the [passing run](../output/verification/acceptance-run-2.txt).
 - Tradeoff: deep offsets and substring searches can need additional indexing or cursor pagination beyond the measured dataset.
-- Commit: **unavailable — no Git history**.
+- Commit: [4a5222c](https://github.com/xyang39/OceanAI/commit/4a5222ca1ff731f2eb89bdb8e611946ed57b88e7) (initial implementation snapshot).
