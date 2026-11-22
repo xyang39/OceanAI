@@ -2,9 +2,9 @@
 
 A multi-tenant certificate admin console built with **Go/Gin, React/TypeScript, and PostgreSQL 18**, started with Docker Compose.
 
-The six planned APIs and their UI workflows are implemented. The A1–A7 acceptance suite passes against isolated PostgreSQL data. **The assessment submission is not yet complete:** Git was initialized during submission packaging, after implementation; earlier incremental commit history is unavailable. The public GitHub remote is [https://github.com/xyang39/OceanAI](https://github.com/xyang39/OceanAI). The [AI evidence snapshot](ai/completeness-declaration.md) is now included, with its limitations and initial implementation commit links documented. See [submission gaps](#submission-gaps-and-known-limits).
+The six planned APIs and their UI workflows are implemented. The A1–A7 acceptance suite passes against isolated PostgreSQL data. **Submission evidence limitations:** Git was initialized during submission packaging, after implementation; earlier incremental commit history is unavailable. The public GitHub remote is [https://github.com/xyang39/OceanAI](https://github.com/xyang39/OceanAI). The [AI evidence snapshot](ai/completeness-declaration.md) is now included, with its limitations and initial implementation commit links documented. See [submission gaps](#submission-gaps-and-known-limits).
 
-Reviewed against the supplied **Ocean AI Labs Beijing – Technical Interview Assessment, version 20261102**, and the implementation plan agreed in this chat. Section 6 answers are intentionally excluded.
+Reviewed against the supplied **Ocean AI Labs Beijing – Technical Interview Assessment, version 20261102**, and the implementation plan agreed in this chat. Section 6 was excluded from AI authoring; the candidate's completed [written answer](written-answer.md) is included unchanged.
 
 ## Start the application
 
@@ -217,7 +217,7 @@ Browser → Nginx (:8080) → Gin API → PostgreSQL
 | Shared list/export behavior | One parameter parser and filter/order builder; stable ID tie-breaker; tenant-local date expression |
 | UI mutation safety | Pending states, confirmation, retained retry keys, and stale-read cancellation |
 | Verification and fixture tooling | Isolated test project, repeatable large-data generator, raw failed/passing logs |
-| Scope exclusions | No background queue, cache, production authentication, cloud deployment, notifications, or section 6 content |
+| Scope exclusions | No background queue, cache, production authentication, cloud deployment, notifications, or AI-generated section 6 answers |
 
 ## Submission gaps and known limits
 
